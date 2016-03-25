@@ -1,0 +1,20 @@
+
+Enver: Release 0.91.4-ALPHA - Production on mer feb 10 20:37:50 2016
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+Job started at 06:38:02.990
+****************************************
+parse().. completed..
+Connected to "BILPR1"@"10.213.168.156" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Report file 'snapshot/BILPR1-20022016-063805.txt' generated.
+> Status of job: 100.0%
+------
+Disconnected from instance.
+
+****************************************
+Job successfully completed at 06:38:11.539 
+Elapsed time: 5897 ms

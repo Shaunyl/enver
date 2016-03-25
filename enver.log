@@ -1,0 +1,64 @@
+
+Enver: Release 0.91.1-ALPHA - Production on mer giu 24 08:18:31 2015
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+Job started at 11:24:41.392
+****************************************
+Validation terminated.
+Connected to "IAM_PRO"@"DB801IAM.INTRANET.FW" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Warnings on 'SELECT input_type, status, 
+  TO_CHAR(start_time, 'yyyy-MON-dd hh24:mi:ss'), 
+  ROUND(elapsed_seconds / 3600, 2) elapsed_hours 
+FROM v$rman_backup_job_details WHERE 
+ start_time > sysdate - 5
+ AND status <> 'COMPLETED'
+ ORDER BY start_time, 1' query
+  > ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+Report not generated due to errors.
+
+****************************************
+Subjob aborted at 11:24:52.762 with the following message:
+ERR: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+Elapsed time: 0 ms
+
+****************************************
+Job completed at 11:24:52.762 with errors (0) and warnings (1)
+Elapsed time: 0 ms
+
+Job started at 11:24:52.762
+****************************************
+Validation terminated.
+Connected to "IQM_PRO"@"DB801IQM.INTRANET.FW" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Report file './backup/IQM_PRO-24062015-112453.txt' generated.
+> Status of job: 100.0%
+------
+Disconnected from instance.
+
+****************************************
+Job completed at 11:24:53.402 with errors (0) and warnings (1)
+Elapsed time: 120 ms
+
+Job started at 11:24:53.402
+****************************************
+Validation terminated.
+Connected to "PINPRO"@"DB802BIL.INTRANET.FW" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Report file './backup/PINPRO-24062015-112453.txt' generated.
+> Status of job: 100.0%
+------
+Disconnected from instance.
+
+****************************************
+Job completed at 11:24:54.62 with errors (0) and warnings (1)
+Elapsed time: 510 ms

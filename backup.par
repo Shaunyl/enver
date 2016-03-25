@@ -1,0 +1,9 @@
+query=SELECT session_key, input_type, status, command_id, \
+  TO_CHAR(start_time, 'yyyy-MON-dd hh24:mi:ss') start_time, \
+  TO_CHAR(end_time, 'yyyy-MON-dd hh24:mi:ss') end_time, \
+  elapsed_seconds / 3600 elapsed_hours \
+FROM v$rman_backup_job_details \
+WHERE start_time > trunc(sysdate) - 3 \
+  AND status = 'COMPLETED' \
+ORDER BY input_type, session_key
+all=y

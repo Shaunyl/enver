@@ -1,0 +1,20 @@
+
+Enver: Release 0.91.4-ALPHA - Production on mar feb 09 17:42:41 2016
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+Job started at 18:15:23.186
+****************************************
+parse().. completed..
+Connected to "UNM_PRO"@"10.30.80.18" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Report file './backup/UNM_PRO-BAK_OUTPUT-10022016-181524.txt' generated.
+> Status of job: 100.0%
+------
+Disconnected from instance.
+
+****************************************
+Job successfully completed at 18:15:24.456 
+Elapsed time: 210 ms

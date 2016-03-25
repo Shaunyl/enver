@@ -1,0 +1,33 @@
+Alarm Auto Extend - ESB_PRO
+
+Starting MonTbsAuto on instance ESB_PRO at 01-Oct-15 13:17:40
+Threshold used -> 1
+
+Retrieving tablespaces info..
+
+  ESB_PRO   SOABPM_MDS[.34/.98]                   AUTOEXTEND[OK]    [.28/.06]                    83.00%/29.00%
+  ESB_PRO   SOABPM_SOAINFRA[5.27/32.00]           AUTOEXTEND[OK]    [5.02/.25]                   95.00%/16.00%
+  ESB_PRO   SYSAUX[1.10/32.00]                    AUTOEXTEND[OK]    [.95/.15]                    86.00%/3.00%
+  ESB_PRO   SYSTEM[1.00/32.00]                    AUTOEXTEND[OK]    [.63/.37]                    63.00%/2.00%
+All datafiles are sub-threshold for tablespace OSBBE_MDS
+All datafiles are sub-threshold for tablespace OSBFE_MDS
+All datafiles are sub-threshold for tablespace USERS
+All datafiles are sub-threshold for tablespace SOABPM_IAS_OPSS
+All datafiles are sub-threshold for tablespace OSBBE_WLS
+All datafiles are sub-threshold for tablespace SOABPM_IAS_UMS
+All datafiles are sub-threshold for tablespace SOABPM_STB
+All datafiles are sub-threshold for tablespace OSBFE_IAS_UMS
+All datafiles are sub-threshold for tablespace OSBBE_IAS_OPSS
+All datafiles are sub-threshold for tablespace OSBBE_IAS_UMS
+All datafiles are sub-threshold for tablespace OSBFE_WLS
+All datafiles are sub-threshold for tablespace OSBBE_SOAINFRA
+All datafiles are sub-threshold for tablespace OSBFE_IAS_IAU
+All datafiles are sub-threshold for tablespace OSBBE_STB
+All datafiles are sub-threshold for tablespace OSBBE_IAS_IAU
+All datafiles are sub-threshold for tablespace SOABPM_WLS
+All datafiles are sub-threshold for tablespace SOABPM_IAS_IAU
+All datafiles are sub-threshold for tablespace OSBFE_STB
+All datafiles are sub-threshold for tablespace OSBFE_SOAINFRA
+All datafiles are sub-threshold for tablespace OSBFE_IAS_OPSS
+
+Job completed successfully 01-Oct-15 13:17:40

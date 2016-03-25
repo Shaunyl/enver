@@ -1,0 +1,21 @@
+
+Enver: version 1.04.1-ALPHA
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+
+Data will be retrieved between rows 100 and 140
+Connected to instance "TESTDB"@"192.168.1.17"
+
+Starting task "expcsv" at 14:10:55
+************************************
+
+Executing query:
+ + 'SELECT segment_name FROM segments'
+
+Data successfully exported to dump file './TESTDB-query1.csv'.
+************
+Elapsed Time: 40ms
+
+************************************
+Disconnected from instance

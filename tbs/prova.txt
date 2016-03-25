@@ -1,0 +1,12 @@
+DATABASE_NAME TABLESPACE_NAME      SIZE_BYTES           USED_BYTES           FREE_BYTES           USED_PCT             LAST_UPDATED        
+TESTDB ENVER                5.24288E7            3.7748736E7          1.4680064E7            72.00              19-apr-2015 17:34:54
+TESTDB UNDOTBS1             8.388608E8           4.84835328E8         3.54025472E8           57.80              19-apr-2015 17:34:54
+TESTDB SYSAUX               5.24288E8            2.0283392E8          3.2145408E8            38.69              19-apr-2015 17:34:54
+TESTDB SYSTEM               2.147483648E9        7.18012416E8         1.429471232E9          33.44              19-apr-2015 17:34:54
+TESTDB ENVER4               5.24288E7            1.048576E7           4.194304E7             20.00              19-apr-2015 17:34:54
+TESTDB ENVER3               5.24288E7            1.048576E7           4.194304E7             20.00              19-apr-2015 17:34:54
+TESTDB USERS                3.5815424E8          7.1565312E7          2.86588928E8           19.98              19-apr-2015 17:34:54
+TESTDB ENVER2               5.24288E7            5242880.0            4.718592E7             10.00              19-apr-2015 17:34:54
+TESTDB PROVA                1048576.0            65536.0              983040.0                6.25              19-apr-2015 17:34:54
+TESTDB XDB                  1.048576E8           1048576.0            1.03809024E8            1.00              19-apr-2015 17:34:54
+TESTDB STREAMS              5.24288E8            2752512.0            5.21535488E8             .53              19-apr-2015 17:34:54

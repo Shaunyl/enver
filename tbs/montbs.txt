@@ -1,0 +1,22 @@
+- Enver Tablespace Report -
+
+time: 19-apr-2015 22:40:01
+
+Alarms:
+-------
+
+C: Tablespace ENVER is 72,00% full.
+  > current size: 50,00mb
+    + used: 36,00mb
+    + free: 14,00mb
+
+W: Tablespace UNDOTBS1 is 57,80% full.
+  > current size: 800,00mb
+    + used: 462,38mb
+    + free: 337,63mb
+
+Notes:
+------
+
+No tablespaces ignored.
+

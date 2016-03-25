@@ -1,0 +1,64 @@
+
+exptab -directory=tbs -parfile=backup.par -filename=backup.txt
+
+
+- Enver Tablespace Report -
+
+>> Sun Apr 19 19:17:44 CEST 2015
+
+Warning
+-------
+Instance TESTDB on host 'centos'.
+
+Tablespace SYSTEM is 72% full.
+ > size (used/free): 50mb (36.02mb/13.98mb) bytes
+-------
+
+- Report End -
+
+
+DATABASE_NAME             TABLESPACE_NAME           SIZE_BYTES                USED_BYTES                FREE_BYTES                USED_PCT                  LAST_UPDATED
+------------------------- ------------------------- ------------------------- ------------------------- ------------------------- ------------------------- -------------------------
+TESTDB                    ENVER                     5.24288E7                 3.7748736E7               1.4680064E7                 72.00                   19-Apr-2015 19:01:22
+
+
+- Enver Tablespace Report -
+
+>> 19-apr-2015 20:27:27
+
+Warning
+-------
+
+Tablespace ENVER is 72,000000% full.
+> size (used/free): 50,000000mb (36,000000mb/14,000000mb)
+Tablespace UNDOTBS1 is 57,799999% full.
+> size (used/free): 800,000000mb (462,375000mb/337,625000mb)
+
+No alarms were detected.
+-------
+
+- Report End -
+
+
+- Enver Tablespace Report -
+
+time: 19-apr-2015 20:41:54
+
+Alarms:
+-------
+
+Tablespace ENVER is 72,00% full.
+ > current size: 50,00mb
+   + used: 36,00mb
+   + free: 14,00mb
+
+Tablespace SYSAUX is 57,80% full.
+ > current size: 800,00mb
+   + used: 462,38mb
+   + free: 337,63mb
+
+Notes:
+------
+
+Tablespaces ignored:
+ > UNDOTBS1

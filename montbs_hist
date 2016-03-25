@@ -1,0 +1,16 @@
+SnapId  Database                Tablespace          Size        Used        Free        Free_PCT        Last_Updated
+------  --------------------    ----------------    --------    ---------   -------     ----------      ------------------
+1002    ESB_INT1                OSBFE_IAS_OPSS      60          40.88       19.12       68.13           08-JUN-15 15:13:55
+1003    ESB_INT1                USERS               5           1.38        3.62        27.50           08-JUN-15 15:13:55
+
+enver_tbs_trend
+---------------
+database
+tablespace
+size
+used
+free
+free_percentage
+last_updated
+
+

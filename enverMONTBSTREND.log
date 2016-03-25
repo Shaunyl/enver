@@ -1,0 +1,20 @@
+
+Enver: Release 0.91.4-ALPHA - Production on mar feb 09 17:42:41 2016
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+Job started at 17:52:45.980
+****************************************
+parse().. completed..
+Connected to "EMREP"@"H3MIH230.CED.H3G.IT" as "SYSTEM"
+Partial time: 0 ms
+> Status of job: 0.0%
+------
+Report file './trend/EMREP-09022016-175247.txt' generated.
+> Status of job: 100.0%
+------
+Disconnected from instance.
+
+****************************************
+Job successfully completed at 17:52:48.357 
+Elapsed time: 1271 ms

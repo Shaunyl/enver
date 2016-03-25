@@ -1,0 +1,48 @@
+0.90.1-ALPHA
+ + added monbak command (deep, all)
+
+0.90.2-ALPHA
+ + parfile
+
+0.91.2-ALPHA
+ + added mondisk command (threshold, include)
+ + fixed some bugs
+
+0.91.3-ALPHA
+ + adjusted installation zip
+
+0.91.3-ALPHA
+ + added montbstrend command (deep, threshold)
+
+0.92.0-BETA
+ + added Derby db to handle local command data
+
+--> for example:
+montbs -undo=n -warning=94 -critical=94 multi=y
+
+BAC_PRO              BAC7_RUM[739,328.00]                            97.36%     (19,553.62)
+DTM_PRO              TBS_DATAMART_50M[74,880.00]                     97.06%      (2,200.00)
+BSB_PRO              SB_BSS_DATA[811,216.00]                         97.00%     (24,365.00)
+FWDBPRO              MYFP_BIG_IDX[119,551.00]                        96.96%      (3,639.00)
+
+CREATE TABLE system.enver_tbs_hist (
+  database_name VARCHAR2(8),
+  tablespace_name VARCHAR2(30),
+  size_mb NUMBER,
+  used_mb NUMBER,
+  free_mb NUMBER,
+  pct_free NUMBER,
+  last_updated DATE);
+
+SELECT used_mb, pct_free, free_mb, last_updated FROM enver_tbs_hist WHERE database_name = 'BAC_PRO'
+  AND tablespace_name = 'BAC7_RUM' ORDER BY 2;
+
+USED_MB     PCT_FREE    FREE_MB         LAST_UPDATED            PCT_FREE_TREND      USED_MB_TREND
+----------  --------    -----------     --------------------    ---------------     --------------
+720,245.00  97.11%      (20,876.80)     23-JUN-2015 08:00:20        ..              ..
+721.886.34  97.36%      (19,553.62)     24-JUN-2015 08:00:37    +0.25%              +1,641.34
+
+otherwise, AWR!
+
+
+

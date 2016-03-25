@@ -1,0 +1,10 @@
+query=SELECT (SELECT name FROM v$database) database_name, d.tablespace_name,  \
+        a.bytes size_bytes,  \
+	a.bytes - DECODE(f.bytes, NULL, 0, f.bytes) used_bytes,  \
+ 	a.bytes - (a.bytes - DECODE(f.bytes, NULL, 0, f.bytes)) free_bytes,  \
+	TO_CHAR((((a.bytes - DECODE(f.bytes, NULL, 0, f.bytes)) / 1048576) * 100) / (a.bytes / 1048576), '999.99') used_pct, \
+        sysdate last_updated  \
+FROM sys.dba_tablespaces d, sys.sm$ts_avail a, sys.sm$ts_free f  \
+WHERE d.tablespace_name = a.tablespace_name  \
+  AND f.tablespace_name (+) = d.tablespace_name  \
+ORDER BY 6 DESC  \

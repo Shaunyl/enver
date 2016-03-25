@@ -1,0 +1,129 @@
+package com.ansaldosts.sms.enver.test;
+
+import com.ansaldosts.sms.enver.EncodingEvaluation;
+import com.ansaldosts.sms.enver.database.ConnectionFactory;
+import com.ansaldosts.sms.enver.exception.UnexpectedEnverException;
+import com.ansaldosts.sms.enver.util.GeneralUtil;
+import java.io.PrintWriter;
+import java.sql.Array;
+import java.sql.Clob;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Types;
+import java.util.Arrays;
+import java.util.List;
+import lombok.Cleanup;
+import lombok.extern.apachecommons.CommonsLog;
+import oracle.jdbc.OracleConnection;
+import oracle.sql.ARRAY;
+
+/**
+ *
+ * @author Filippo
+ */
+@CommonsLog
+public class ExportXmlTestA extends EncodingEvaluation.Test {
+
+    private List<String> schemas, tabs;
+    private String[] tables;
+    private final String clobArray = "CLOB_ARRAY";
+    private String schema;
+
+    ExportXmlTestA(EncodingEvaluation.TestOptions options, EncodingEvaluation.Status status) {
+        super(options, status);
+    }
+
+    @Override
+    public void testSetup() throws SQLException {
+        super.testSetup();
+        schemas = options.getSchemas();
+        schema = schemas.get(0);
+        tabs = options.getTables();
+
+        if (schemas.isEmpty()) {
+            return;
+        }
+
+        if (options.getFull()) {
+            this.getAllTables();
+        }
+
+        tables = new String[tabs.size()];
+        tabs.toArray(tables);
+
+        if (tables.length == 0) {
+            return;
+        }
+
+        callable = connection.prepareCall("{ CALL encoding_verifier.export_table_xml(?, ?, ?) }");
+    }
+
+    @Override
+    public void testAtomic(final int i) {
+        try {
+            setParameters(tables);
+            callable.execute();
+
+            Array clobs = (callable).getArray(3);
+            int k = 0;
+            ResultSet elements = clobs.getResultSet();
+            while (elements.next()) {
+                Clob clob = elements.getClob(2);
+                if (clob == null) {
+                    continue;
+                }
+                String xml = GeneralUtil.clobToString(clob);
+                saveToFile(xml, schema + "." + tables[k++]);
+            }
+
+
+        } catch (SQLException e) {
+            throw new UnexpectedEnverException(e.getMessage(), e);
+        }
+        //clob.free();
+        //log.info("Table '" + ext_table + "' has been downloaded successfully.");
+    }
+
+    private void saveToFile(final String xml, final String name) {
+
+        try {
+            @Cleanup
+            PrintWriter out = new PrintWriter(options.getDirectory() + "/" + name + ".xml", "UTF-8");
+            out.write(xml);
+            out.flush();
+        } catch (Throwable e) {
+            if (log.isDebugEnabled()) {
+                log.debug(ExportXmlTestA.class.getName() + ".testAtomic", e);
+            } else {
+                log.error(e.getMessage());
+            }
+        }
+    }
+
+    private void setParameters(String[] varcharArray) throws SQLException {
+        callable.setString(1, schema); //TEMPME...     
+
+        ARRAY array = ((OracleConnection) connection).createARRAY("VARCHAR_ARRAY", varcharArray);
+
+        callable.setArray(2, array);
+        callable.registerOutParameter(3, Types.ARRAY, clobArray);
+    }
+
+    private void getAllTables() {
+        Statement stmt = null;
+        ResultSet rs = null;
+        tabs.clear();
+        try {
+            stmt = connection.createStatement();
+            rs = stmt.executeQuery("SELECT table_name FROM dba_tables WHERE owner = '" + schema + "'");
+            while (rs.next()) {
+                tabs.add(rs.getString(1));
+            }
+        } catch (SQLException e) {
+            throw new UnexpectedEnverException(e.getMessage(), e);
+        } finally {
+            ConnectionFactory.close(rs, stmt);
+        }
+    }
+}

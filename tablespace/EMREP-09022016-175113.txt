@@ -1,0 +1,23 @@
+Alarm Auto Extend - EMREP
+
+Starting MonTbsAuto on instance EMREP at 09-Feb-2016 17:51:14
+Threshold used -> 10
+
+Retrieving tablespaces info..
+
+  EMREP     MGMT_TABLESPACE[71.36/288.00]         AUTOEXTEND[OK]           [45.90/25.46]                16.00%
+All datafiles are sub-threshold for tablespace STAT
+All datafiles are sub-threshold for tablespace SYSAUX
+All datafiles are sub-threshold for tablespace FLOW_1
+All datafiles are sub-threshold for tablespace TS_APEX
+All datafiles are sub-threshold for tablespace SYSTEM
+All datafiles are sub-threshold for tablespace LOGMINER
+All datafiles are sub-threshold for tablespace TRCA
+All datafiles are sub-threshold for tablespace USERS
+All datafiles are sub-threshold for tablespace CATALOG_10202
+All datafiles are sub-threshold for tablespace AUDIT_TBS
+All datafiles are sub-threshold for tablespace MGMT_ECM_DEPOT_TS
+All datafiles are sub-threshold for tablespace TS_XMLDB
+All datafiles are sub-threshold for tablespace DBA_TBS
+
+Job completed successfully 09-Feb-2016 17:51:14

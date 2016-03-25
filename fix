@@ -1,0 +1,72 @@
+
+Fix: 0.89.71
+----
+
+
+1) IMPCSV:
+    ImportCSVTask.java: 170.. NullPointerException (Vedi 2)
+
+2) IMPCSV: 
+    Se non trova file, problemi con parsing della data, o valori null, da log si vede il vuoto, nello stack si vede l'errore.
+
+3) IMPCSV:
+    Se non si esplicita owner.table.csv non funge con l'errore a riga 170.
+    L'errore è dovuto al fatto che non trova la tabella sotto lo schema specificati.
+    Loggare anche questo tipo di errori. Al momento escono con 'null'. (Vedi 2)
+
+4) IMPCSV | IMPEXCEL:
+    Aggiornare funzionalità del parametro FILENAME in modo da poter importare tutti i file presenti in una cartella.
+    FIXED FOR IMPCSV: use wildcard '*' to import all files into a folder. Examples:
+
+        filename=tbs/20141218/*
+        filename=tbs/file.csv
+
+5) IMPCSV:
+    Errore riga 182, formato data non valido... java.util.Date deprecato, usare DateFormat
+       cosa migliore sarebbe poter indicare un formato da linea di comando (parametro: format)
+    FIXED: Date replaces with SimpleDateFormat.. Examples:
+
+        dd-MMM-yyyy: 18-DEC-2014
+        dd-mm-yyyy:  18-12-2014
+
+6) IMPCSV:
+    Funziona solo se il file contiene colonne con lo stesso nome delle colonne nella tabella del db.
+    Aggiungere una nuova funzionalità che consente di importare dati senza controllare i nomi delle colonne.
+
+7) IMPCSV:
+    A volte importa i dati senza eliminare i doppi apici.
+    Esempio:
+
+        AOL_PRO  TOOLS"                               2124    373.281   1750.719       17.6 18-JAN-14
+        AOL_PRO  MV_DATA"                            14064       9774       4290       69.5 18-JAN-14
+
+8) EXPCSV:
+    Durante un export, alcuni dati del file csv non vengono trimmati, e appaiono con degli spazi interni.
+    Esempio:
+    
+        "AOL_PRO", "USERS", "        12856"
+
+9) ALL:
+    Il parametro FEEDBACK non funziona correttamente. Codice erroneo.
+    FIXED: fixed for now only for task IMPCSV.
+
+10) EXPCSV:
+    Se eseguo l'import in modalità multi, ma non vi è connessione ai db (per un errore), oppure a causa di un errore, il file lo genera cmq.
+
+11) EXPEXCEL:
+    Add font color to excel settings..
+
+12) EXPEXCEL:
+    Se non trova folder di destinazione, esce con warnings ma non stampa errore.
+
+13) EXPCSV:
+    Aggiungere parametri queries e tables, sostituendo i vecchi query e table.
+--------
+
+FIXED: 4*, 5, 9*
+
+* only for IMPCSV, for now.
+
+Migliorato logging
+Aggiunto level logging
+Fixati alcuni bug

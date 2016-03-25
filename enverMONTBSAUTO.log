@@ -1,0 +1,18 @@
+
+Enver: Release 0.91.4-ALPHA - Production on sab feb 20 14:17:01 2016
+Copyright (c) 2014 Filippo Testino (Shaunyl).
+All Right Reserved.
+
+Job [montbsauto] started at 10:45:47.578
+****************************************
+Connected to "PINPRO"@"DB802BIL.INTRANET.FW" as "SYSTEM"
+------
+* status: 0.0% (1 ms)
+Report file './tablespace/PINPRO-25032016-104549.txt' generated.
+* status: 100.0% (21929 ms)
+------
+Disconnected from instance.
+
+****************************************
+Job successfully completed at 10:46:11.441 
+Elapsed time: 21929 ms

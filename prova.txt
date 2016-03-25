@@ -1,0 +1,16 @@
+Enver Tablespace Report
+
+Starting MonTbs on instance <n.p.> at 27-mag-2015 08:09:52
+Ignoring tablespace contents -> UNDO
+Thresholds used -> 95 (critical), 90 (warning)
+
+Retrieving tablespaces info..
+
+Check for criticals:
+  SYSTEM[1000000,00]			0,00%		(0,76)
+BAC_PRO
+Check for warnings:
+  SYSAUX[2000000,00]			0,00%		(1,53)
+BAC_PRO
+
+Job completed successfully 27-mag-2015 08:09:52
