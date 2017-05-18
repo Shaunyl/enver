@@ -2,7 +2,8 @@
 
 A Java 1.6 command line based tool that help you to automate tasks on databases. You can use it for example on Linux systems to perform regular checks against a net of nodes.  
 
-It is very light version of the Enver-0.89.6-SHAPSHOT tool and the shauni tool. It is almost free of external dependecies.  
+It is very light version of the Enver-0.89.6-SHAPSHOT tool and the shauni tool, but it is based on JCommander (http://jcommander.org/).  
+It is almost free of external dependecies.  
 
 **expcsv**: -> export data into CSV files  
 **montbs**: -> monitor the space usage of the tablespaces  
